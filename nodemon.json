@@ -10,5 +10,5 @@
     "src"
   ],
   "ext": "ts",
-  "exec": "ts-node -P ./tsconfig.json -r ./src/index.ts"
+  "exec": "ts-node -P ./tsconfig.json -r ./src/server.ts"
 }

@@ -35,7 +35,7 @@ edit `tsconfig.json`
 
 create `.gitignore`
 
-create `index.ts`
+create `server.ts`
 
 edit `pacakge.json` for start `nodemone` with command `npm start`
 
@@ -43,3 +43,11 @@ start server with command `npm start`
 
 open `http://127.0.0.1:8080`
 
+# Step 1
+
+## MVC Structure
+
+- Create `controllers` folder
+- Create `models` folder
+- Create `app.ts` for main configuration file
+- Change `server.ts` for controllers
