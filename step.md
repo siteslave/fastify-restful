@@ -77,3 +77,9 @@ npm install fastify-knexjs knex mysql2 --save
   - Create test model
   - Create test route
   - Create typings `typings/fastify.d.ts`
+
+  # Step 4 CREATE
+  - Create user
+    - Create `models/user.ts`
+    - Create `controllers/users.ts`
+    - Update `route.ts`
