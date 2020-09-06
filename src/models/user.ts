@@ -25,5 +25,11 @@ export class UserModel {
       .update(data)
   }
 
+  remove(db: knex, userId: any) {
+    return db('users')
+      .where('user_id', userId)
+      .del()
+  }
+
 
 }

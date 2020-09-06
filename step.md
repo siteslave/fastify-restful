@@ -93,3 +93,7 @@ npm install fastify-knexjs knex mysql2 --save
   # Step 6 UPDATE (Update info/password)
   - Update `models/user.ts`
   - Update `controllers/users.ts`
+
+  # Step 7 DELETE
+    - Update `models/user.ts`
+  - Update `controllers/users.ts`

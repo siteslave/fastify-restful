@@ -102,4 +102,17 @@ export default async function users(fastify: FastifyInstance) {
     }
   })
 
+  fastify.delete('/:userId', async (request: FastifyRequest, reply: FastifyReply) => {
+    const params: any = request.params
+    const userId = params.userId
+
+    try {
+      await userModel.remove(db, userId)
+
+      reply.send({ ok: true })
+    } catch (error) {
+      reply.send({ message: error.message })
+    }
+  })
+
 }
