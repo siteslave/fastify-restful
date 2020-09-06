@@ -49,5 +49,7 @@ open `http://127.0.0.1:8080`
 
 - Create `controllers` folder
 - Create `models` folder
+- Create `router.ts` file
 - Create `app.ts` for main configuration file
 - Change `server.ts` for controllers
+- Create routes 

@@ -1,5 +1,5 @@
 import * as fastify from 'fastify'
-import routers from './routers/router'
+import routers from './router'
 
 const app: fastify.FastifyInstance = fastify.fastify({
   logger: { level: 'info' }
