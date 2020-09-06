@@ -19,5 +19,11 @@ export class UserModel {
       .orderBy('first_name', 'desc')
   }
 
+  update(db: knex, userId: any, data: any) {
+    return db('users')
+      .where('user_id', userId)
+      .update(data)
+  }
+
 
 }

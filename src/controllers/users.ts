@@ -59,5 +59,47 @@ export default async function users(fastify: FastifyInstance) {
     }
   })
 
+  fastify.put('/:userId/edit', async (request: FastifyRequest, reply: FastifyReply) => {
+    const body: any = request.body
+    const params: any = request.params
+
+    const firstName = body.firstName
+    const lastName = body.lastName
+
+    const userId = params.userId
+
+    try {
+      const data: any = {}
+      data.first_name = firstName
+      data.last_name = lastName
+
+      await userModel.update(db, userId, data)
+
+      reply.send(data)
+    } catch (error) {
+      reply.send({ message: error.message })
+    }
+  })
+
+  fastify.put('/:userId/password', async (request: FastifyRequest, reply: FastifyReply) => {
+    const body: any = request.body
+    const params: any = request.params
+
+    const password = body.password
+
+    const userId = params.userId
+
+    try {
+      const encPassword = crypto.createHash('md5').update(password).digest('hex')
+      const data: any = {}
+      data.password = encPassword
+
+      await userModel.update(db, userId, data)
+
+      reply.send({ ok: true })
+    } catch (error) {
+      reply.send({ message: error.message })
+    }
+  })
 
 }
