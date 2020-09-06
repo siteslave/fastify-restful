@@ -65,3 +65,15 @@ open `http://127.0.0.1:8080`
 - Create `GET` route
 - Create `PUT` route
 - Create `DELETE` route
+
+# Step 3 Database settings
+- install `knexjs`
+```
+npm install fastify-knexjs knex mysql2 --save
+```
+- configure fastify-knexjs plugin
+- Create database/table
+- Test connection
+  - Create test model
+  - Create test route
+  - Create typings `typings/fastify.d.ts`
