@@ -83,3 +83,9 @@ npm install fastify-knexjs knex mysql2 --save
     - Create `models/user.ts`
     - Create `controllers/users.ts`
     - Update `route.ts`
+  
+  # Step 5 READ
+  - Update `models/user.ts`
+  - Update `controllers/users.ts`
+    - read all
+    - query

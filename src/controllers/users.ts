@@ -34,4 +34,30 @@ export default async function users(fastify: FastifyInstance) {
     }
   })
 
+  fastify.get('/', async (request: FastifyRequest, reply: FastifyReply) => {
+    try {
+      const rs: any = await userModel.read(db)
+
+      reply.send(rs)
+    } catch (error) {
+      reply.send({ message: error.message })
+    }
+  })
+
+  // /search?q=xxxx
+  fastify.get('/search', async (request: FastifyRequest, reply: FastifyReply) => {
+
+    const query: any = request.query
+    const _query = query.q
+
+    try {
+      const rs: any = await userModel.search(db, _query)
+
+      reply.send(rs)
+    } catch (error) {
+      reply.send({ message: error.message })
+    }
+  })
+
+
 }

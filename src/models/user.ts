@@ -8,4 +8,16 @@ export class UserModel {
     return db('users').insert(data)
   }
 
+  read(db: knex) {
+    return db('users').orderBy('first_name', 'desc')
+  }
+
+  search(db: knex, query: string) {
+    const _query = `%${query}%`;
+    return db('users')
+      .where('first_name', 'like', _query)
+      .orderBy('first_name', 'desc')
+  }
+
+
 }
