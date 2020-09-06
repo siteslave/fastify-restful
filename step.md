@@ -53,3 +53,15 @@ open `http://127.0.0.1:8080`
 - Create `app.ts` for main configuration file
 - Change `server.ts` for controllers
 - Create routes 
+
+# Step 2 Basic of Routing (CRUD routing)
+
+- Create `controllers/demo.ts`
+- Update `route.ts`
+- add `fastify-cors`
+- add `fastify-formbody`
+
+- Create `POST` route
+- Create `GET` route
+- Create `PUT` route
+- Create `DELETE` route
