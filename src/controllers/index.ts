@@ -6,4 +6,15 @@ export default async function index(fastify: FastifyInstance) {
     reply.send({ message: 'Hello wolrd!' })
   })
 
+  fastify.get('/jwt/sign', (request: FastifyRequest, reply: FastifyReply) => {
+    const token = fastify.jwt.sign({ message: 'Fastify very fast!' })
+    reply.send({ token })
+  })
+
+  fastify.get('/jwt/verify', {
+    preValidation: [fastify.authenticate]
+  }, (request: FastifyRequest, reply: FastifyReply) => {
+    reply.send({ message: 'Protected area!' })
+  })
+
 }

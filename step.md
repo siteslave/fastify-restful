@@ -96,4 +96,24 @@ npm install fastify-knexjs knex mysql2 --save
 
   # Step 7 DELETE
     - Update `models/user.ts`
-  - Update `controllers/users.ts`
+    - Update `controllers/users.ts`
+
+  # Step 8 JWT and Login
+    - Install JWT package
+    
+    ```
+    npm i fastify-jwt jsonwebtoken --save 
+    npm i @types/jsonwebtoken --save-dev
+    ```
+    
+    - Create plugin folder/file
+    - Configure JWT
+    - Testing JWT (`controllers/index.ts`)
+    - Enable JWT protect route
+      - Sign
+      - Access protected route
+      - Verify at `https://www.jwt.io`
+    - Login
+      - Create login model (`models/login.ts`)
+      - Create login route (`controllers/login.ts`)
+      - Verify at `https://www.jwt.io`

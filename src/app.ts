@@ -23,6 +23,10 @@ app.register(require('fastify-knexjs'), {
   debug: true,
 })
 
+app.register(require('./plugins/jwt'), {
+  secret: '1234567890xx'
+})
+
 app.register(routers)
 
 export default app;
