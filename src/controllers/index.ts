@@ -14,7 +14,8 @@ export default async function index(fastify: FastifyInstance) {
   fastify.get('/jwt/verify', {
     preValidation: [fastify.authenticate]
   }, (request: FastifyRequest, reply: FastifyReply) => {
-    reply.send({ message: 'Protected area!' })
+    const decoded: any = request.user
+    reply.send({ message: 'Protected area!', decoded })
   })
 
 }
