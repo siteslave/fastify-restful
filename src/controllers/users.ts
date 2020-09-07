@@ -34,7 +34,9 @@ export default async function users(fastify: FastifyInstance) {
     }
   })
 
-  fastify.get('/', async (request: FastifyRequest, reply: FastifyReply) => {
+  fastify.get('/', {
+    preValidation: [fastify.authenticate]
+  }, async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const rs: any = await userModel.read(db)
 

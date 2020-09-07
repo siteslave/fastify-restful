@@ -116,4 +116,5 @@ npm install fastify-knexjs knex mysql2 --save
     - Login
       - Create login model (`models/login.ts`)
       - Create login route (`controllers/login.ts`)
+      - Access protected route (`controllers/users.ts`)
       - Verify at `https://www.jwt.io`
