@@ -12,5 +12,18 @@ declare module 'fastify' {
     jwtVerify: any
     user: any
   }
+
+  interface RouteShorthandOptions {
+    websocket?: boolean
+  }
+
+  interface RouteShorthandMethod {
+    (
+      path: string,
+      opts: any,
+      handler: any,
+      params?: { [key: string]: any }
+    );
+  }
 }
 

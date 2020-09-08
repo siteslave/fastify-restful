@@ -27,6 +27,19 @@ app.register(require('./plugins/jwt'), {
   secret: '1234567890xx'
 })
 
+app.register(require('fastify-websocket'), {
+  options: {
+    maxPayload: 1048576,
+    verifyClient: function (info: any, next: any) {
+      if (info.req.headers['x-fastify-header'] !== 'fastify') {
+        return next(false) // the connection is not allowed
+      }
+      next(true) // the connection is allowed
+    }
+  },
+
+})
+
 app.register(routers)
 
 export default app;
