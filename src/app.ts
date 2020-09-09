@@ -32,9 +32,9 @@ app.register(require('fastify-websocket'), {
     maxPayload: 1048576,
     verifyClient: function (info: any, next: any) {
       if (info.req.headers['x-fastify-header'] !== 'fastify') {
-        return next(false) // the connection is not allowed
+        return next(false)
       }
-      next(true) // the connection is allowed
+      next(true)
     }
   },
 
