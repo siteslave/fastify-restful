@@ -1,8 +1,7 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
-
 import { v4 as uuidv4 } from 'uuid'
 
-const multer = require('fastify-multer')
+import multer from 'fastify-multer'
 const mime = require('mime-types')
 
 import * as fse from 'fs-extra'
@@ -25,7 +24,18 @@ export default async function upload(fastify: FastifyInstance) {
     }
   })
 
-  const upload = multer({ storage })
+  const upload = multer({
+    storage,
+    limits: {
+      fileSize: 5 * 1024 * 1024,
+    },
+    fileFilter: (req: any, file: any, cb: any) => {
+      if (file.mimetype !== 'image/png') {
+        return cb(new Error('Invalid mimetype'), false)
+      }
+      cb(null, true)
+    }
+  })
 
   fse.ensureDirSync(uploadDir)
 
@@ -34,7 +44,6 @@ export default async function upload(fastify: FastifyInstance) {
   }, async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const file = request.file
-
       reply.send({ file })
     } catch (error) {
       console.log(error)
