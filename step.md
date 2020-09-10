@@ -176,3 +176,10 @@ vi schemas/demo.ts
 - Query String Schema
 - Header Schema
 - Error management
+
+# Section 5 Multiple database connection
+- Create plugin `plugins/db.ts`
+- Update connection `app.ts`
+- Create model `models/customer.ts`
+- Create router `routers/customers.ts`
+- Test connection

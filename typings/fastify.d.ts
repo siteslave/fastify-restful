@@ -4,6 +4,7 @@ import * as jsonwebtoken from 'jsonwebtoken';
 declare module 'fastify' {
   interface FastifyInstance {
     knex: knex
+    knex2: knex
     jwt: jsonwebtoken
     authenticate: any
     ws: any

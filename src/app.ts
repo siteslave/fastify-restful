@@ -12,23 +12,44 @@ app.register(multer.contentParser)
 
 app.register(require('fastify-formbody'))
 app.register(require('fastify-cors'), {})
-app.register(require('fastify-knexjs'), {
-  client: 'mysql2',
-  connection: {
-    host: 'localhost',
-    user: 'root',
-    port: 3306,
-    password: '789124',
-    database: 'test',
-  },
-  pool: {
-    min: 0,
-    max: 100
-  },
-  debug: true,
+// First connection
+app.register(require('./plugins/db'), {
+  connectionName: 'knex',
+  options: {
+    client: 'mysql2',
+    connection: {
+      host: 'localhost',
+      user: 'root',
+      port: 3306,
+      password: '789124',
+      database: 'test',
+    },
+    pool: {
+      min: 0,
+      max: 100
+    },
+    debug: true,
+  }
 })
-
-
+// Second connection
+app.register(require('./plugins/db'), {
+  connectionName: 'knex2',
+  options: {
+    client: 'mysql2',
+    connection: {
+      host: 'localhost',
+      user: 'root',
+      port: 3306,
+      password: '789124',
+      database: 'test2',
+    },
+    pool: {
+      min: 0,
+      max: 100
+    },
+    debug: true,
+  }
+})
 
 app.register(require('./plugins/jwt'), {
   secret: '1234567890xx'
