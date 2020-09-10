@@ -2,9 +2,13 @@ import * as fastify from 'fastify'
 import routers from './router'
 import WebSocket from 'ws';
 
+const multer = require('fastify-multer')
+
 const app: fastify.FastifyInstance = fastify.fastify({
   logger: { level: 'info' }
 })
+
+app.register(multer.contentParser)
 
 app.register(require('fastify-formbody'))
 app.register(require('fastify-cors'), {})
@@ -23,6 +27,8 @@ app.register(require('fastify-knexjs'), {
   },
   debug: true,
 })
+
+
 
 app.register(require('./plugins/jwt'), {
   secret: '1234567890xx'

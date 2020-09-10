@@ -13,6 +13,7 @@ declare module 'fastify' {
   interface FastifyRequest {
     jwtVerify: any
     user: any
+    file: any
   }
 
 }

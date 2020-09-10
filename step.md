@@ -151,3 +151,15 @@ plugins/io.ts
 - Test with socket.io-client
 
 - Create demo app
+
+# Step 10 File upload
+- install package
+```
+npm i fastify-multer mime-types uuid fs-extra -S
+npm i @types/fs-extra @types/uuid -D
+```
+- Register plugin in `app.ts`
+- Edit `typeings/fastify.d.ts`
+- create routing `controllers/upload.ts`
+- Test upload
+- View file
