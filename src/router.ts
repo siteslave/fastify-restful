@@ -6,6 +6,7 @@ import testRoute from './controllers/test'
 import userRoute from './controllers/users'
 import loginRoute from './controllers/login'
 import uploadRoute from './controllers/upload'
+import schemaRoute from './controllers/schema'
 
 export default async function router(fastify: FastifyInstance) {
   fastify.register(indexRoute, { prefix: '/' });
@@ -14,4 +15,5 @@ export default async function router(fastify: FastifyInstance) {
   fastify.register(userRoute, { prefix: '/users' });
   fastify.register(loginRoute, { prefix: '/login' });
   fastify.register(uploadRoute, { prefix: '/upload' });
+  fastify.register(schemaRoute, { prefix: '/schema' });
 }

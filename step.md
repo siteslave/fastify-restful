@@ -163,3 +163,16 @@ npm i @types/fs-extra @types/uuid -D
 - create routing `controllers/upload.ts`
 - Test upload
 - View file
+
+# Step 11 Validation
+- Create Schema
+```
+mdkir schemas
+vi schemas/demo.ts
+```
+- Create route `controllers/schema.ts`
+- Apply Schema to router
+- Body Schema
+- Query String Schema
+- Header Schema
+- Error management
