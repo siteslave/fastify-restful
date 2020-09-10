@@ -5,7 +5,6 @@ import demoRoute from './controllers/demo'
 import testRoute from './controllers/test'
 import userRoute from './controllers/users'
 import loginRoute from './controllers/login'
-import webSocketRoute from './controllers/socket'
 
 export default async function router(fastify: FastifyInstance) {
   fastify.register(indexRoute, { prefix: '/' });
@@ -13,5 +12,4 @@ export default async function router(fastify: FastifyInstance) {
   fastify.register(testRoute, { prefix: '/test' });
   fastify.register(userRoute, { prefix: '/users' });
   fastify.register(loginRoute, { prefix: '/login' });
-  fastify.register(webSocketRoute, { prefix: '/ws' });
 }

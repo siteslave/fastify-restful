@@ -6,6 +6,7 @@ declare module 'fastify' {
     knex: knex
     jwt: jsonwebtoken
     authenticate: any
+    ws: any
   }
 
   interface FastifyRequest {
@@ -13,17 +14,5 @@ declare module 'fastify' {
     user: any
   }
 
-  interface RouteShorthandOptions {
-    websocket?: boolean
-  }
-
-  interface RouteShorthandMethod {
-    (
-      path: string,
-      opts: any,
-      handler: any,
-      params?: { [key: string]: any }
-    );
-  }
 }
 
