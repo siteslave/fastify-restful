@@ -13,6 +13,8 @@ export default async function upload(fastify: FastifyInstance) {
 
   const uploadDir = './uploads'
 
+  // document : http://expressjs.com/en/resources/middleware/multer.html
+
   var storage = multer.diskStorage({
     destination: function (req: any, file: any, cb: any) {
       cb(null, uploadDir)
@@ -45,6 +47,18 @@ export default async function upload(fastify: FastifyInstance) {
     try {
       const file = request.file
       reply.send({ file })
+    } catch (error) {
+      console.log(error)
+      reply.code(500).send({ statusCode: 500, error: error.message })
+    }
+  })
+
+  fastify.post('/bulk', {
+    preHandler: upload.array('file', 3)
+  }, async (request: FastifyRequest, reply: FastifyReply) => {
+    try {
+      const files = request.files
+      reply.send({ files })
     } catch (error) {
       console.log(error)
       reply.code(500).send({ statusCode: 500, error: error.message })

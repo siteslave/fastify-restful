@@ -14,6 +14,7 @@ declare module 'fastify' {
     jwtVerify: any
     user: any
     file: any
+    files: any[]
   }
 
 }
