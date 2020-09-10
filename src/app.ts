@@ -39,11 +39,37 @@ app.register(require('./plugins/ws'), {
   }
 })
 
+app.register(require('./plugins/io'), {})
+
+const sockets: any = []
 
 app.ready(err => {
   if (err) throw err
 
   console.log('Websocket Server started.')
+
+  // middleware
+  app.io.use((socket: any, next: any) => {
+    let token = socket.handshake.headers['x-fastify-socket-token'];
+    console.log(token)
+    // if (isValid(token)) {
+    return next();
+    // }
+    // return next(new Error('authentication error'));
+  });
+
+  app.io.on('connection', (socket: any) => {
+    console.log('user connected')
+
+    socket.username = Math.round(Math.random())
+    socket.on('chat message', (message: any) => {
+      console.log(message)
+    })
+
+    socket.on('disconnect', () => {
+      console.log('user disconnected')
+    })
+  })
 
   app.ws
     .on('connection', (socket: any) => {
@@ -59,6 +85,7 @@ app.ready(err => {
 
       socket.on('close', () => console.log('Client disconnected.'))
     })
+
 })
 
 app.register(routers)

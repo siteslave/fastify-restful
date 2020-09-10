@@ -118,3 +118,36 @@ npm install fastify-knexjs knex mysql2 --save
       - Create login route (`controllers/login.ts`)
       - Access protected route (`controllers/users.ts`)
       - Verify at `https://www.jwt.io`
+
+# (Step 9) WebSocket/Socket.io
+
+### WebSocket
+  - install plugins
+
+    ```
+    npm i ws -S
+    npm i @types/ws -D
+    ```
+  - Create plugin
+
+  ```
+  plugins/ws.ts
+  ```
+  - Edit typings `fastify.d.ts`
+  - Edit `app.ts`
+  - Authentication
+
+### Socket.io
+- install
+```
+npm i socket.io
+```
+- Create plugin
+```
+plugins/io.ts
+```
+- Edit typings `fastify.d.ts`
+- Edit `app.ts`
+- Test with socket.io-client
+
+- Create demo app

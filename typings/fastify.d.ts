@@ -7,6 +7,7 @@ declare module 'fastify' {
     jwt: jsonwebtoken
     authenticate: any
     ws: any
+    io: any
   }
 
   interface FastifyRequest {
