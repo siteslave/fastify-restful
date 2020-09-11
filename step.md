@@ -183,3 +183,17 @@ vi schemas/demo.ts
 - Create model `models/customer.ts`
 - Create router `routers/customers.ts`
 - Test connection
+
+# Axios HTTP Client
+- install plugin
+```
+npm install fastify-axios @types/axios -S
+```
+- register plugin `app.ts`
+- edit `typings/fastify.d.ts`
+- Basic usage - create `controllers/webservice.ts`
+=========================================
+- Authentication with bearer token
+=========================================
+- Multiple endpoint
+=========================================

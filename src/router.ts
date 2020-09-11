@@ -8,6 +8,7 @@ import loginRoute from './controllers/login'
 import uploadRoute from './controllers/upload'
 import schemaRoute from './controllers/schema'
 import customersRoute from './controllers/customers'
+import webServiceRoute from './controllers/webservice'
 
 export default async function router(fastify: FastifyInstance) {
   fastify.register(indexRoute, { prefix: '/' });
@@ -18,4 +19,5 @@ export default async function router(fastify: FastifyInstance) {
   fastify.register(uploadRoute, { prefix: '/upload' });
   fastify.register(schemaRoute, { prefix: '/schema' });
   fastify.register(customersRoute, { prefix: '/customers' });
+  fastify.register(webServiceRoute, { prefix: '/webservice' });
 }

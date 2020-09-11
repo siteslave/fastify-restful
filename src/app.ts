@@ -115,6 +115,18 @@ app.ready(err => {
 
 })
 
+// Axios
+app.register(require('fastify-axios'), {
+  clients: {
+    v1: {
+      baseURL: 'https://apingweb.com/api/rest',
+    },
+    v2: {
+      baseURL: 'https://randomuser.me/api'
+    }
+  }
+})
+
 app.register(routers)
 
 export default app;

@@ -1,5 +1,6 @@
 import * as knex from 'knex'
 import * as jsonwebtoken from 'jsonwebtoken';
+import { AxiosInstance } from 'axios';
 
 declare module 'fastify' {
   interface FastifyInstance {
@@ -9,6 +10,7 @@ declare module 'fastify' {
     authenticate: any
     ws: any
     io: any
+    axios: AxiosInstance | any
   }
 
   interface FastifyRequest {
