@@ -22,7 +22,7 @@ build:
       cp /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && \
       echo "Asia/Bangkok" > /etc/timezone
     - npm i
-    - npm run build
+    - npm run build:dist
 
 deploy:
   image: docker:latest
