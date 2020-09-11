@@ -1,10 +1,11 @@
 {
-  "name": "free-courese",
+  "name": "fastify-rest",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "start": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dist": "npx gulp"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +37,13 @@
     "@types/node": "^14.6.4",
     "@types/uuid": "^8.3.0",
     "@types/ws": "^7.2.6",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "readable-stream": "^3.6.0",
     "socket.io-client": "^2.3.0",
     "typescript": "^4.0.2"
   }

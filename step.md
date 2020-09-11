@@ -209,3 +209,11 @@ npm i @chonla/fastify-qrcode -S
 - add qrcode to route `controllers/index.ts`
 ===========================================
 - customize qrcode
+
+# Gulp
+- install packages
+```
+npm install gulp gulp-clean gulp-cli gulp-sourcemaps gulp-typescript gulp-uglify readable-stream -D
+```
+- create gulp file `gulpfile.js`
+- add cmd alias to `package.json`
