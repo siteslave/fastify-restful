@@ -227,3 +227,11 @@ npm install dotenv -S
 - edit configure file
 - edit `app.ts`
 - edit `controllers/upload.ts`
+
+# Gitlab CI
+- create `process.json`
+- create `Dockerfile`
+- create `.dockerignore`
+- create `gitlab-ci.yml`
+- create `docker-compose.yml`
+- start docker-compose
