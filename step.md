@@ -187,7 +187,8 @@ vi schemas/demo.ts
 # Axios HTTP Client
 - install plugin
 ```
-npm install fastify-axios @types/axios -S
+npm install fastify-axios -S
+npm install @types/axios -D
 ```
 - register plugin `app.ts`
 - edit `typings/fastify.d.ts`
@@ -197,3 +198,12 @@ npm install fastify-axios @types/axios -S
 =========================================
 - Multiple endpoint
 =========================================
+
+# QR Code
+- install plugin
+```
+npm i @chonla/fastify-qrcode -S 
+```
+- register plugin `app.ts`
+- update typings `typings/fastify.d.ts`
+- add qrcode to route `controllers/index.ts`

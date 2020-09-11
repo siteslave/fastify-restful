@@ -127,6 +127,9 @@ app.register(require('fastify-axios'), {
   }
 })
 
+// QR Code
+app.register(require('@chonla/fastify-qrcode'))
+
 app.register(routers)
 
 export default app;

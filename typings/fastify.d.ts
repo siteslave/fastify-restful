@@ -11,6 +11,7 @@ declare module 'fastify' {
     ws: any
     io: any
     axios: AxiosInstance | any
+    qrcode: any
   }
 
   interface FastifyRequest {
