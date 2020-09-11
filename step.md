@@ -207,3 +207,5 @@ npm i @chonla/fastify-qrcode -S
 - register plugin `app.ts`
 - update typings `typings/fastify.d.ts`
 - add qrcode to route `controllers/index.ts`
+===========================================
+- customize qrcode
