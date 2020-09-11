@@ -217,3 +217,13 @@ npm install gulp gulp-clean gulp-cli gulp-sourcemaps gulp-typescript gulp-uglify
 ```
 - create gulp file `gulpfile.js`
 - add cmd alias to `package.json`
+
+# Environment
+- Instal plugin
+```
+npm install dotenv -S
+```
+- Create configure file `config.conf`
+- edit configure file
+- edit `app.ts`
+- edit `controllers/upload.ts`

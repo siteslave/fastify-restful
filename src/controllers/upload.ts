@@ -11,7 +11,7 @@ import * as fs from 'fs'
 
 export default async function upload(fastify: FastifyInstance) {
 
-  const uploadDir = './uploads'
+  const uploadDir = process.env.UPLOAD_DIR || './uploads'
 
   // document : http://expressjs.com/en/resources/middleware/multer.html
 

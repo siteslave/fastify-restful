@@ -1,8 +1,11 @@
 import * as fastify from 'fastify'
 import routers from './router'
-import WebSocket from 'ws';
+import WebSocket from 'ws'
+import { join } from 'path'
 
 const multer = require('fastify-multer')
+
+require('dotenv').config({ path: join(__dirname, '../config.conf') })
 
 const app: fastify.FastifyInstance = fastify.fastify({
   logger: { level: 'info' }
@@ -18,11 +21,11 @@ app.register(require('./plugins/db'), {
   options: {
     client: 'mysql2',
     connection: {
-      host: 'localhost',
-      user: 'root',
-      port: 3306,
-      password: '789124',
-      database: 'test',
+      host: process.env.DB_HOST || 'localhost',
+      user: process.env.DB_USER || 'root',
+      port: Number(process.env.DB_PORT) || 3306,
+      password: process.env.DB_PASSWORD || '',
+      database: process.env.DB_NAME || 'test',
     },
     pool: {
       min: 0,
@@ -52,7 +55,7 @@ app.register(require('./plugins/db'), {
 })
 
 app.register(require('./plugins/jwt'), {
-  secret: '1234567890xx'
+  secret: process.env.SECRET_KEY || '@1234567890@'
 })
 
 app.register(require('./plugins/ws'), {
