@@ -1,11 +1,12 @@
 import * as crypto from 'crypto'
 
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
+import { Knex } from 'knex'
 import { LoginModel } from '../models/login'
 
 export default async function login(fastify: FastifyInstance) {
 
-  const db: any = fastify.knex
+  const db: Knex = fastify.knex
   const loginModel = new LoginModel()
 
   fastify.post('/', async (request: FastifyRequest, reply: FastifyReply) => {

@@ -1,13 +1,14 @@
 import * as crypto from 'crypto'
 
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
+import { Knex } from 'knex'
 import { UserModel } from '../models/user'
 
 export default async function users(fastify: FastifyInstance) {
 
   const userModel = new UserModel()
 
-  const db: any = fastify.knex
+  const db: Knex = fastify.knex
 
   fastify.post('/', async (request: FastifyRequest, reply: FastifyReply) => {
     const body: any = request.body

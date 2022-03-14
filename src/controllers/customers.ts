@@ -1,10 +1,11 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
+import { Knex } from 'knex'
 import { CustomerModel } from '../models/customer'
 
 export default async function customers(fastify: FastifyInstance) {
 
   const customerModel = new CustomerModel()
-  const db: any = fastify.knex
+  const db: Knex = fastify.knex
 
   fastify.get('/', async (request: FastifyRequest, reply: FastifyReply) => {
     try {
