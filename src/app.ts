@@ -50,6 +50,8 @@ app.register(require('fastify-axios'), {
   }
 })
 
+// QR Code
+app.register(require('@chonla/fastify-qrcode'))
 
 app.ready(err => {
   if (err) throw err

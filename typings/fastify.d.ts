@@ -7,6 +7,7 @@ declare module 'fastify' {
     jwt: jsonwebtoken
     authenticate: any
     axios: AxiosInstance | any
+    qrcode: any
   }
 
   interface FastifyRequest {

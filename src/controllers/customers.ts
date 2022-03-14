@@ -4,7 +4,7 @@ import { CustomerModel } from '../models/customer'
 export default async function customers(fastify: FastifyInstance) {
 
   const customerModel = new CustomerModel()
-  const db: any = fastify.knex2
+  const db: any = fastify.knex
 
   fastify.get('/', async (request: FastifyRequest, reply: FastifyReply) => {
     try {
