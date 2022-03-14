@@ -1,31 +1,30 @@
-import * as knex from 'knex';
-
+import { Knex } from 'knex'
 export class UserModel {
 
-  constructor() { }
+  constructor () { }
 
-  create(db: knex, data: any) {
+  create(db: Knex, data: any) {
     return db('users').insert(data)
   }
 
-  read(db: knex) {
+  read(db: Knex) {
     return db('users').orderBy('first_name', 'desc')
   }
 
-  search(db: knex, query: string) {
+  search(db: Knex, query: string) {
     const _query = `%${query}%`;
     return db('users')
       .where('first_name', 'like', _query)
       .orderBy('first_name', 'desc')
   }
 
-  update(db: knex, userId: any, data: any) {
+  update(db: Knex, userId: any, data: any) {
     return db('users')
       .where('user_id', userId)
       .update(data)
   }
 
-  remove(db: knex, userId: any) {
+  remove(db: Knex, userId: any) {
     return db('users')
       .where('user_id', userId)
       .del()

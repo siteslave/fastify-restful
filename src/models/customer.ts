@@ -1,10 +1,10 @@
-import * as knex from 'knex';
+import { Knex } from 'knex'
 
 export class CustomerModel {
 
   constructor () { }
 
-  list(db: knex) {
+  list(db: Knex) {
     return db('customers')
   }
 

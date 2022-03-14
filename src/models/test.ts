@@ -1,10 +1,9 @@
-import * as knex from 'knex';
-
+import { Knex } from 'knex'
 export class TestModel {
 
-  constructor() { }
+  constructor () { }
 
-  test(db: knex) {
+  test(db: Knex) {
     return db('users')
   }
 

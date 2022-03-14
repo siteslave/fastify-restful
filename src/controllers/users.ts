@@ -29,7 +29,7 @@ export default async function users(fastify: FastifyInstance) {
       await userModel.create(db, data)
 
       reply.send(data)
-    } catch (error) {
+    } catch (error: any) {
       reply.send({ message: error.message })
     }
   })
@@ -41,7 +41,7 @@ export default async function users(fastify: FastifyInstance) {
       const rs: any = await userModel.read(db)
 
       reply.send(rs)
-    } catch (error) {
+    } catch (error: any) {
       reply.send({ message: error.message })
     }
   })
@@ -56,7 +56,7 @@ export default async function users(fastify: FastifyInstance) {
       const rs: any = await userModel.search(db, _query)
 
       reply.send(rs)
-    } catch (error) {
+    } catch (error: any) {
       reply.send({ message: error.message })
     }
   })
@@ -78,7 +78,7 @@ export default async function users(fastify: FastifyInstance) {
       await userModel.update(db, userId, data)
 
       reply.send(data)
-    } catch (error) {
+    } catch (error: any) {
       reply.send({ message: error.message })
     }
   })
@@ -99,7 +99,7 @@ export default async function users(fastify: FastifyInstance) {
       await userModel.update(db, userId, data)
 
       reply.send({ ok: true })
-    } catch (error) {
+    } catch (error: any) {
       reply.send({ message: error.message })
     }
   })
@@ -112,7 +112,7 @@ export default async function users(fastify: FastifyInstance) {
       await userModel.remove(db, userId)
 
       reply.send({ ok: true })
-    } catch (error) {
+    } catch (error: any) {
       reply.send({ message: error.message })
     }
   })

@@ -47,7 +47,7 @@ export default async function upload(fastify: FastifyInstance) {
     try {
       const file = request.file
       reply.send({ file })
-    } catch (error) {
+    } catch (error: any) {
       console.log(error)
       reply.code(500).send({ statusCode: 500, error: error.message })
     }
@@ -59,7 +59,7 @@ export default async function upload(fastify: FastifyInstance) {
     try {
       const files = request.files
       reply.send({ files })
-    } catch (error) {
+    } catch (error: any) {
       console.log(error)
       reply.code(500).send({ statusCode: 500, error: error.message })
     }
@@ -82,7 +82,7 @@ export default async function upload(fastify: FastifyInstance) {
           error: 'File not found'
         })
       }
-    } catch (error) {
+    } catch (error: any) {
       reply.code(500).send({ statusCode: 500, error: error.message })
     }
   })

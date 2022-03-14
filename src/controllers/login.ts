@@ -32,7 +32,7 @@ export default async function login(fastify: FastifyInstance) {
       }
 
 
-    } catch (error) {
+    } catch (error: any) {
       reply.status(500).send({ message: error.message })
     }
   })

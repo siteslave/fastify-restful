@@ -11,7 +11,7 @@ export default async function test(fastify: FastifyInstance) {
       const rs: any = await testModel.test(db)
 
       reply.send(rs)
-    } catch (error) {
+    } catch (error: any) {
       reply.send({ message: error.message })
     }
   })
