@@ -9,7 +9,7 @@ import * as path from 'path'
 import * as fs from 'fs'
 
 
-export default async function upload(fastify: FastifyInstance) {
+export default async (fastify: FastifyInstance) => {
 
   const uploadDir = process.env.UPLOAD_DIR || './uploads'
 

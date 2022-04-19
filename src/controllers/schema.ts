@@ -3,7 +3,7 @@ import demoSchema from '../schemas/demo'
 import querySchema from '../schemas/query'
 import headerSchema from '../schemas/header'
 
-export default async function index(fastify: FastifyInstance) {
+export default async (fastify: FastifyInstance) => {
 
   fastify.post('/demo', { schema: demoSchema, attachValidation: true }, (request: FastifyRequest, reply: FastifyReply) => {
     if (request.validationError) {

@@ -1,7 +1,7 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
 import { AxiosResponse } from 'axios'
 
-export default async function webService(fastify: FastifyInstance) {
+export default async (fastify: FastifyInstance) => {
 
   fastify.get('/demo', async (request: FastifyRequest, reply: FastifyReply) => {
     const rs: AxiosResponse = await fastify.axios.v2.get('/?gender=female')

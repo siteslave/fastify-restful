@@ -4,7 +4,7 @@ import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
 import { Knex } from 'knex'
 import { UserModel } from '../models/user'
 
-export default async function users(fastify: FastifyInstance) {
+export default async (fastify: FastifyInstance) => {
 
   const userModel = new UserModel()
 

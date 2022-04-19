@@ -1,6 +1,6 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
 
-export default async function demo(fastify: FastifyInstance) {
+export default async (fastify: FastifyInstance) => {
 
   fastify.post('/', (request: FastifyRequest, reply: FastifyReply) => {
     reply.send({ message: 'Message from POST method' })

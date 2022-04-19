@@ -4,7 +4,7 @@ import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
 import { Knex } from 'knex'
 import { LoginModel } from '../models/login'
 
-export default async function login(fastify: FastifyInstance) {
+export default async (fastify: FastifyInstance) => {
 
   const db: Knex = fastify.knex
   const loginModel = new LoginModel()
