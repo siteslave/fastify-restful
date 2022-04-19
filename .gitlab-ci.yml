@@ -1,7 +1,7 @@
 stages: [build, deploy]
 
 build:
-  image: node:14-alpine
+  image: node:14-alpine3.12
   stage: build
   script:
     - apk update && \
@@ -10,7 +10,7 @@ build:
       alpine-sdk \
       git \
       openssh \
-      python \
+      python3 \
       tzdata \
       build-base \
       libtool \
@@ -18,12 +18,12 @@ build:
       automake \
       gzip \
       g++ \
-      make && \
-      cp /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && \
-      echo "Asia/Bangkok" > /etc/timezone
+      make
     - npm i
     - npm run build:dist
-
+  only:
+    - main
+    
 deploy:
   image: docker:latest
   stage: deploy
@@ -36,5 +36,4 @@ deploy:
     - docker push "$CI_REGISTRY_IMAGE"
 
   only:
-    - master
-    - gitlab-ci
+    - main

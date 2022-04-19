@@ -8,7 +8,7 @@ RUN apk update && apk upgrade && apk add --no-cache \
   alpine-sdk \
   git \
   openssh \
-  python \
+  python3 \
   tzdata \
   build-base \
   libtool \
